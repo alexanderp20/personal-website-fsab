@@ -9,11 +9,11 @@ function ListGroup() {
     "Curious",
   ];
   const [selectedIndex, setSelectedIndex]  = useState(-1);
+  
 
-
-
-  //Event handler
-  const handleClick = (event: MouseEvent) => console.log(event);
+  const openInNewTab = (url:string) => {
+    window.open(url);
+  }
 
   return (
     <>
@@ -23,7 +23,7 @@ function ListGroup() {
           <li
             className={ selectedIndex === index ? 'list-group-item active' : 'list-group-item'}
             key={item}
-            onClick={() => { setSelectedIndex(index)}}
+            onClick={() => { setSelectedIndex(index), openInNewTab("https://www.linkedin.com/in/alexander-pak-11964b1b8/")}}
           >
             {item}
           </li>
